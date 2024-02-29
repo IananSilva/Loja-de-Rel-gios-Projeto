@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Open Sans';
+    /*aqui eu deixei eles sem margens e sem muito espaçamento porque eu queria
+    que eles ficassem junto que na minha opinião fica mas organizado e depois 
+    eu coloquei uma fonte pra ficar mas bonito*/
+}
+header{
+    background: url(header.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    /*eu tambem coloquei uma foto de fundo, centralizei ela e deixei em 
+    um tamanho bom que a imagem não ficasse destorcida*/
+}
+header h1{
+    text-align: center;
+    font-size: 78px;
+    color: white;
+    padding: 30px 0;
+
+}
+.estoque{
+    max-width: 1200px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    contain: paint;
+    /*usei esse max-width para deixa as fotos alinhadas e paralelas*/
+}
+.estoque .itens-gerais{
+    margin-top: 30px;
+    display: grid;
+    /*eu adcionei o grid para deixar eles alinhados um do lado do outro */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 30px;
+    /*depois eu alinhei eles em colunas e coloquei um espaçamento neles*/
+    grid-row-gap: 30px;
+    /*esse comando serve para deixar um espaçamento como se tivesse pulando um paragrafo*/
+    width: 60%;
+    /*pra deixar as fotos alinhadas uma do lado da outra*/
+    transition: 2s;
+}
+.estoque .itens-gerais .item{
+    max-width: 200px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 800ms;
+    /*aqui eu estou usando o transition para quando eu passar o mouse por cima
+    fazer um movimento*/
+}
+.itens-gerais .item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+    /*aqui estou dizendo o tanto de movimento que ele deve fazer
+    e quando ele fizer esse movimento pra ele fazer isso deixar 
+    um sombreado*/
+}
+.itens-gerais .item .img-item{
+    width: 100%;
+}
+.itens-gerais .item .titulo-itens{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.itens-gerais .item .preco-item{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+.itens-gerais .item .botao-item{
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /*eu mudei de cor a opção de adicionar o carriho e fiz com que 
+    quando o mouse passar por cima da opção ele mudar o tipo do cursor*/
+}
+
+/*a partir daqui é sobre a parte do carrinho*/
+.carrinho{
+    border: 1px solid #666;
+    width: 35%;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: sticky !important;
+    top: 0;
+    transition: 3s;
+}
+.carrinho .header-carrinho{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+.carrinho .carrinho-itens{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #666;
+    padding: 20px;
+}
+.carrinho .carrinho-itens img{
+    margin-right: 20px;
+}
+.carrinho .carrinho-itens .carrinho-item{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.carrinho .carrinho-itens .selecionar-escolhido{
+    display: inline-block;
+    margin-right: 25px;
+}
+.carrinho .carrinho-itens .carrinho-item-detalhes{
+    border: none;
+    font-size: 15px;
+    background: transparent;
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+}
+.carrinho .carrinho-itens .selecionar-escolhido i{
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.carrinho .carrinho-itens .carrinho-item-preco{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.carrinho .carrinho-itens .resetar-escolhido{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    z-index: 20;
+}
+.carrinho .carrinho-itens .resetar-escolhido{
+    pointer-events: none;
+}
+.carrinho-total{
+    background-color: white;
+    padding: 30px;
+}
+.carrinho-total .fila{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.carrinho-total .bnt-pagar{
+    display: block;
+    width: 100%;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.carrinho-total .bnt-pagar:hover{
+    scale: 1.85s;
+}
+@media screen and (max-width:850px) {
+    /*essa funçao é bem legal porque ela prioriza o carrinho e os itens dele ai quando por exemplo mininiza a tela ele
+    acompanha*/
+    .item{
+        display: block;
+    }
+    .carrinho-itens{
+        width: 100% !important;
+    }
+    .carrinho{
+        width: 100%;
+    }
+    /*aqui eu estou definindo os itens como importante e tambem para quando mover as bordas ele ir se adequando*/
+}
